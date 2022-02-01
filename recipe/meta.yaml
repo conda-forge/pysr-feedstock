@@ -1,11 +1,12 @@
-{% set version = "0.7.0-1" %}
+{% set version = "0.7.0" %}
+{% set pypiversion = "0.7.0-1" %}
 
 package:
   name: pysr
   version: {{ version }}
 
 source:
-  - url: https://github.com/MilesCranmer/PySR/archive/v{{ version }}.tar.gz
+  - url: https://github.com/MilesCranmer/PySR/archive/v{{ pypiversion }}.tar.gz
     sha256: 76b78e2dc265902a6ed79eab390696592ce3a8bac03f667c56892716546d1deb
 
 build:
