@@ -26,7 +26,7 @@ requirements:
     - pandas
     - sympy
     - scikit-learn
-    - openlibm < 0.8.0
+    - openlibm <0.8.0
   run:
     - python >=3.6,<4.0
     - {{ pin_compatible('pyjulia') }}
