@@ -10,7 +10,7 @@ source:
 
 build:
   noarch: python
-  number: 1
+  number: 2
   script: "{{ PYTHON }} -m pip install . -vv && {{ PYTHON }} -c 'import pysr; pysr.install()'"
 
 requirements:
@@ -29,8 +29,8 @@ requirements:
     - openlibm <0.8.0
   run:
     - python >=3.6,<4.0
-    - pyjulia
-    - numpy
+    - pyjulia >=0.5.7
+    - numpy >=1.14.0
     - pandas
     - sympy
     - scikit-learn
