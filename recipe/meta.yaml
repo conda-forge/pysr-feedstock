@@ -1,4 +1,4 @@
-{% set version = "0.7.3" %}
+{% set version = "0.7.4" %}
 
 package:
   name: pysr
@@ -6,7 +6,7 @@ package:
 
 source:
   - url: https://github.com/MilesCranmer/PySR/archive/v{{ version }}.tar.gz
-    sha256: 4a75e02a6db758420ea1e5f3eb35200aa4d487ab1b39c979cd80e0cd3e7841b8
+    sha256: 918e042fc1cccb9403b9e6b1b1cf159c3c5876942e093c8c144b30d208e906fe
 
 build:
   noarch: python
@@ -22,6 +22,7 @@ requirements:
     - python >=3.6,<4.0
     - pip
     - pyjulia >=0.5.7
+    - julia <= 1.7.1
     - numpy >=1.14.0
     - pandas
     - sympy
@@ -30,6 +31,7 @@ requirements:
   run:
     - python >=3.6,<4.0
     - pyjulia >=0.5.7
+    - julia <= 1.7.1
     - numpy >=1.14.0
     - pandas
     - sympy
