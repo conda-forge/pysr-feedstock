@@ -22,7 +22,7 @@ requirements:
     - python >=3.6,<4.0
     - pip
     - pyjulia >=0.5.7
-    - julia <= 1.7.1
+    - julia <=1.7.1
     - numpy >=1.14.0
     - pandas
     - sympy
@@ -31,7 +31,7 @@ requirements:
   run:
     - python >=3.6,<4.0
     - pyjulia >=0.5.7
-    - julia <= 1.7.1
+    - julia <=1.7.1
     - numpy >=1.14.0
     - pandas
     - sympy
