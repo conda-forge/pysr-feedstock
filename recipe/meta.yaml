@@ -1,4 +1,4 @@
-{% set version = "0.7.2" %}
+{% set version = "0.7.3" %}
 
 package:
   name: pysr
@@ -6,12 +6,12 @@ package:
 
 source:
   - url: https://github.com/MilesCranmer/PySR/archive/v{{ version }}.tar.gz
-    sha256: e26de6e08636a40f30cdb5f2f3af20f4a9a3f6b1a083ef530ff5697642bb909d
+    sha256: 4a75e02a6db758420ea1e5f3eb35200aa4d487ab1b39c979cd80e0cd3e7841b8
 
 build:
   noarch: python
-  number: 2
-  script: "{{ PYTHON }} -m pip install . -vv && {{ PYTHON }} -c 'import pysr; pysr.install()'"
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv && {{ PYTHON }} -c 'import pysr; pysr.install()'
 
 requirements:
   build:
@@ -50,7 +50,7 @@ about:
   license: Apache-2.0
   license_family: Apache
   license_file: LICENSE
-  summary: 'Simple, fast, and parallelized symbolic regression in Python'
+  summary: Simple, fast, and parallelized symbolic regression in Python
   description: |
     PySR is a simple, fast, and parallelized symbolic regression package for Python and Julia, which makes use of an algorithm based on regularized evolution and simulated annealing.
   doc_url: https://astroautomata.com/PySR
