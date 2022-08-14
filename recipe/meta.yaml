@@ -1,4 +1,4 @@
-{% set version = "0.9.5" %}
+{% set version = "0.10.0" %}
 
 package:
   name: pysr
@@ -6,7 +6,7 @@ package:
 
 source:
   - url: https://github.com/MilesCranmer/PySR/archive/v{{ version }}.tar.gz
-    sha256: 3223bbbcf285de0627823150ff217eb41f348d9bc4a072949027df145e9be426
+    sha256: 92225729d84f12b5d2c9143b2d6f2e2beffa07c6e23b0efaef8069cb70f001ab
 
 build:
   noarch: python
