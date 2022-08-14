@@ -20,12 +20,11 @@ requirements:
   run:
     - python >=3.6,<4.0
     - pyjulia >=0.5.7
-    - julia <=1.7.1
+    - julia >=1.6.0
     - numpy >=1.14.0
     - pandas
     - sympy
     - scikit-learn >=1.0.0
-    - openlibm <0.8.0
 
 test:
   imports:
