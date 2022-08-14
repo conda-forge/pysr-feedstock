@@ -14,20 +14,9 @@ build:
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
-  build:
-    - python
-    - pip
-    - pyjulia >=0.5.7
   host:
     - python >=3.6,<4.0
     - pip
-    - pyjulia >=0.5.7
-    - julia <=1.7.1
-    - numpy >=1.14.0
-    - pandas
-    - sympy
-    - scikit-learn
-    - openlibm <0.8.0
   run:
     - python >=3.6,<4.0
     - pyjulia >=0.5.7
@@ -36,7 +25,7 @@ requirements:
     - pandas
     - sympy
     - scikit-learn
-    - openlibm
+    - openlibm <0.8.0
 
 test:
   imports:
