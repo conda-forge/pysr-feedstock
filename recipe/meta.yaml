@@ -10,7 +10,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv && {{ PYTHON }} -c 'import pysr; pysr.install()'
 
 requirements:
@@ -45,7 +45,7 @@ test:
     - pip
   commands:
     - pip check
-    - python -c 'import pysr; pysr.install(); from pysr.sr import init_julia; init_julia()'
+    - python -c 'from pysr.sr import init_julia; init_julia()'
 
 about:
   home: https://github.com/MilesCranmer/PySR
