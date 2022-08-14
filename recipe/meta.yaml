@@ -34,7 +34,10 @@ test:
     - pip
   commands:
     - pip check
+    # Smoke test for starting PyJulia:
     - python -c 'from pysr.sr import init_julia; init_julia()'
+    # Smoke test for running model:
+    - python -c 'import numpy as np; from pysr import PySRRegressor; X = np.random.randn(100,1); y = X[:, 0]**3; PySRRegressor().fit(X, y).predict(X)'
 
 about:
   home: https://github.com/MilesCranmer/PySR
