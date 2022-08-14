@@ -11,7 +11,7 @@ source:
 build:
   noarch: python
   number: 1
-  script: {{ PYTHON }} -m pip install . -vv && {{ PYTHON }} -c 'import pysr; pysr.install()'
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
