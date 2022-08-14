@@ -24,7 +24,7 @@ requirements:
     - numpy >=1.14.0
     - pandas
     - sympy
-    - scikit-learn
+    - scikit-learn >=1.0.0
     - openlibm <0.8.0
 
 test:
