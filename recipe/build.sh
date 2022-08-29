@@ -4,12 +4,14 @@ set -euxo pipefail
 
 ${PYTHON} -m pip install . -vv
 
+julia -e "using Pkg; Pkg.add(\"PyCall\")"
+
 ${PYTHON} -c 'import pysr; pysr.install()'
 
-# Copy the [de]activate scripts to $PREFIX/etc/conda/[de]activate.d.
-# This will allow them to be run on environment activation.
-for CHANGE in "activate" "deactivate"
-do
-    mkdir -p "${PREFIX}/etc/conda/${CHANGE}.d"
-    cp "${RECIPE_DIR}/scripts/${CHANGE}.sh" "${PREFIX}/etc/conda/${CHANGE}.d/${PKG_NAME}_${CHANGE}.sh"
-done
+# # Copy the [de]activate scripts to $PREFIX/etc/conda/[de]activate.d.
+# # This will allow them to be run on environment activation.
+# for CHANGE in "activate" "deactivate"
+# do
+#     mkdir -p "${PREFIX}/etc/conda/${CHANGE}.d"
+#     cp "${RECIPE_DIR}/scripts/${CHANGE}.sh" "${PREFIX}/etc/conda/${CHANGE}.d/${PKG_NAME}_${CHANGE}.sh"
+# done
