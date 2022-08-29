@@ -13,7 +13,7 @@ build:
   skip: true  # [win]
 requirements:
   host:
-    - python >=3.6,<4.0
+    - python
     - pip
     - pyjulia >=0.5.7
     - julia
@@ -23,7 +23,7 @@ requirements:
     - scikit-learn
     - openlibm <0.8.0
   run:
-    - python >=3.6,<4.0
+    - python
     - pyjulia >=0.5.7
     - julia
     - numpy >=1.14.0
