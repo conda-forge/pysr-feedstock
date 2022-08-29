@@ -11,7 +11,7 @@ source:
 build:
   noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv && {{ PYTHON }} -c 'import pysr; pysr.install()' && rm -rf ${PREFIX}/share/julia/!(packages|artifacts)
+  script: {{ PYTHON }} -m pip install . -vv && {{ PYTHON }} -c 'import pysr; pysr.install()' && rm -rf '${PREFIX}/share/julia/!(packages|artifacts)'
 
 requirements:
   host:
