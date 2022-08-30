@@ -32,8 +32,8 @@ cat "${PREFIX}/share/SymbolicRegression.jl/depot/environments/pysr-${$PKG_VERSIO
 
 # # Copy the [de]activate scripts to $PREFIX/etc/conda/[de]activate.d.
 # # This will allow them to be run on environment activation.
-# for CHANGE in "activate" "deactivate"
-# do
-#     mkdir -p "${PREFIX}/etc/conda/${CHANGE}.d"
-#     cp "${RECIPE_DIR}/scripts/${CHANGE}.sh" "${PREFIX}/etc/conda/${CHANGE}.d/${PKG_NAME}_${CHANGE}.sh"
-# done
+for CHANGE in "activate" "deactivate"
+do
+    mkdir -p "${PREFIX}/etc/conda/${CHANGE}.d"
+    cp "${RECIPE_DIR}/scripts/${CHANGE}.sh" "${PREFIX}/etc/conda/${CHANGE}.d/${PKG_NAME}_${CHANGE}.sh"
+done
