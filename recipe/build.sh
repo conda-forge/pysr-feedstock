@@ -9,7 +9,7 @@ FAKEDEPOT="${PREFIX}/share/SymbolicRegression.jl/fake_depot"
 export JULIA_DEPOT_PATH="${FAKEDEPOT}"
 # Set the JULIA_PROJECT so PyCall.jl gets installed into it
 # FIXME: Get version correctly
-export JULIA_PROJECT="@pysr-0.10.1"
+export JULIA_PROJECT="@pysr-${$PKG_VERSION}"
 mkdir -p "${FAKEDEPOT}"
 ${PYTHON} -c 'import pysr; pysr.install();'
 
@@ -27,7 +27,8 @@ export JULIA_DEPOT_PATH="${SRDEPOT}"
 
 # Report on the build
 ls -R "${PREFIX}/share/SymbolicRegression.jl/depot"
-cat "${PREFIX}/share/SymbolicRegression.jl/depot/environments/pysr-0.10.1/Project.toml"
+cat "${PREFIX}/share/SymbolicRegression.jl/depot/environments/pysr-${$PKG_VERSION}/Project.toml"
+cat "${PREFIX}/share/SymbolicRegression.jl/depot/environments/pysr-${$PKG_VERSION}/Manifest.toml"
 
 # # Copy the [de]activate scripts to $PREFIX/etc/conda/[de]activate.d.
 # # This will allow them to be run on environment activation.
