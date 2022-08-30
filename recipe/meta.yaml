@@ -39,6 +39,7 @@ test:
     - pip
   commands:
     - pip check
+    - julia --project=@pysr-{{ version }} -e "using PyCall"
     - python -c 'from pysr.sr import init_julia; init_julia()'
 
 about:
