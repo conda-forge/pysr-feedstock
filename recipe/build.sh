@@ -26,10 +26,8 @@ rm -rf "${FAKEDEPOT}"
 export JULIA_DEPOT_PATH="${SRDEPOT}"
 
 # Report on the build
-ls -r ${PREFIX}/share/SymbolicRegression.jl/depot
-# let's disable this for now, erroring with 
-# cat: /home/conda/feedstock_root/build_artifacts/pysr_1661818633222/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeh/share/SymbolicRegression.jl/depot/environments/pysr-0.10.1: Is a directory
-# cat ${PREFIX}/share/SymbolicRegression.jl/depot/environments/*
+ls -R "${PREFIX}/share/SymbolicRegression.jl/depot"
+cat "${PREFIX}/share/SymbolicRegression.jl/depot/environments/pysr-0.10.1/Project.toml"
 
 # # Copy the [de]activate scripts to $PREFIX/etc/conda/[de]activate.d.
 # # This will allow them to be run on environment activation.
