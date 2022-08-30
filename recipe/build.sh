@@ -47,4 +47,4 @@ done
 # Activate the versioned pysr julia project upon activate.
 # The activated Projewct.toml should contain PyCall.jl, SymbolicRegression.jl,
 # and ClusterManagers.jl
-"export JULIA_PROJECT=\"@pysr-${PKG_VERSION}\"" >> "${PREFIX}/etc/conda/activate.d/${PKG_NAME}_activate.sh"
+echo "export JULIA_PROJECT=\"@pysr-${PKG_VERSION}\"" >> "${PREFIX}/etc/conda/activate.d/${PKG_NAME}_activate.sh"
