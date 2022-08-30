@@ -9,7 +9,7 @@ FAKEDEPOT="${PREFIX}/share/SymbolicRegression.jl/fake_depot"
 export JULIA_DEPOT_PATH="${FAKEDEPOT}"
 # Set the JULIA_PROJECT so PyCall.jl gets installed into it
 # FIXME: Get version correctly
-export JULIA_PROJECT="@pysr-${$PKG_VERSION}"
+export JULIA_PROJECT="@pysr-${PKG_VERSION}"
 mkdir -p "${FAKEDEPOT}"
 ${PYTHON} -c 'import pysr; pysr.install();'
 
