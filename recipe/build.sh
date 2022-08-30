@@ -25,11 +25,6 @@ mv "${FAKEDEPOT}/conda" "${SRDEPOT}/conda"
 rm -rf "${FAKEDEPOT}"
 export JULIA_DEPOT_PATH="${SRDEPOT}"
 
-# Report on the build
-ls -R "${PREFIX}/share/SymbolicRegression.jl/depot"
-cat "${PREFIX}/share/SymbolicRegression.jl/depot/environments/pysr-${$PKG_VERSION}/Project.toml"
-cat "${PREFIX}/share/SymbolicRegression.jl/depot/environments/pysr-${$PKG_VERSION}/Manifest.toml"
-
 # # Copy the [de]activate scripts to $PREFIX/etc/conda/[de]activate.d.
 # # This will allow them to be run on environment activation.
 for CHANGE in "activate" "deactivate"
