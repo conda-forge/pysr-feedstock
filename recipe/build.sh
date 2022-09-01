@@ -8,7 +8,7 @@ ${PYTHON} -m pip install . -vv
 # SymbolicRegression.jl's dependencies
 
 # Start a fake Julia depot
-FAKEDEPOT="${PREFIX}/share/SymbolicRegression.jl/fake_depot"
+FAKEDEPOT="${PREFIX}/share/pysr/fake_depot"
 export JULIA_DEPOT_PATH="${FAKEDEPOT}"
 # Set the JULIA_PROJECT so PyCall.jl gets installed into it
 export JULIA_PROJECT="@pysr-${PKG_VERSION}"
@@ -17,7 +17,7 @@ ${PYTHON} -c 'import pysr; pysr.install();'
 
 # Copy packages, artifacts, environments, and conda dirs
 # into the real depot that we will package
-SRDEPOT="${PREFIX}/share/SymbolicRegression.jl/depot"
+SRDEPOT="${PREFIX}/share/pysr/depot"
 mkdir -p "${SRDEPOT}"
 
 # Select particular depot subdirectories to package
@@ -34,7 +34,9 @@ mv "${FAKEDEPOT}/conda" "${SRDEPOT}/conda"
 
 # Destroy the fake depot
 rm -rf "${FAKEDEPOT}"
-export JULIA_DEPOT_PATH="${SRDEPOT}"
+# We should not depend on these variables further in the build phase
+unset JULIA_DEPOT_PATH
+unset JULIA_PROJECT
 
 # # Copy the [de]activate scripts to $PREFIX/etc/conda/[de]activate.d.
 # # This will allow them to be run on environment activation.
@@ -45,6 +47,13 @@ do
 done
 
 # Activate the versioned pysr julia project upon activate.
-# The activated Projewct.toml should contain PyCall.jl, SymbolicRegression.jl,
+# Also add the pysr project into the project stack
+# The activated Project.toml should contain PyCall.jl, SymbolicRegression.jl,
 # and ClusterManagers.jl
-echo "export JULIA_PROJECT=\"@pysr-${PKG_VERSION}\"" >> "${PREFIX}/etc/conda/activate.d/${PKG_NAME}_activate.sh"
+ACTIVATE_SCRIPT="${PREFIX}/etc/conda/activate.d/${PKG_NAME}_activate.sh"
+echo "export PYSR_PROJECT=\"@pysr-${PKG_VERSION}\"" >> $ACTIVATE_SCRIPT
+echo "export JULIA_PROJECT=\$PYSR_PROJECT" >> $ACTIVATE_SCRIPT
+# If JULIA_LOAD_PATH were "@:@myproject:@stdlib" it would become "@:$PYSR_PROJECT:@myproject:@stdlib"
+echo "# Add PYSR_PROJECT to the project stack" >> $ACTIVATE_SCRIPT
+echo "export JULIA_LOAD_PATH=\${JULIA_LOAD_PATH/@/@:\$PYSR_PROJECT}" >> $ACTIVATE_SCRIPT
+
