@@ -1,3 +1,5 @@
+#!/bin/sh
+
 export JULIA_DEPOT_PATH_PYSR_BACKUP=${JULIA_DEPOT_PATH:-}
 export JULIA_PROJECT_PYSR_BACKUP=${JULIA_PROJECT:-}
 export JULIA_LOAD_PATH_PYSR_BACKUP=${JULIA_LOAD_PATH:-}
@@ -11,7 +13,6 @@ export JULIA_DEPOT_PATH="${JULIA_DEPOT_PATH}${CONDA_PREFIX}/share/pysr/depot:"
 # See https://github.com/conda-forge/julia-feedstock/pull/221
 if [[ $OSTYPE == 'darwin'* ]]; then
   export JULIA_SSL_CA_ROOTS_PATH=""
-else
 fi
 
 # build.sh will insert lines to set JULIA_PROJECT to @pysr-${VERSION},
