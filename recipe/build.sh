@@ -4,6 +4,11 @@ set -euxo pipefail
 
 ${PYTHON} -m pip install . -vv
 
+# Temporary fix for macos
+if [[ $OSTYPE == 'darwin'* ]]; then
+  export JULIA_SSL_CA_ROOTS_PATH=""
+fi
+
 # Build an accessory Julia depot containing all of
 # SymbolicRegression.jl's dependencies
 
