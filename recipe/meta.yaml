@@ -40,7 +40,7 @@ test:
   commands:
     - pip check
     - julia --project=@pysr-{{ version }} -e "using PyCall"
-    - python -c 'import os; os.environ["JULIA_SSL_CA_ROOTS_PATH"]=""; from pysr.sr import init_julia; init_julia()'
+    - python -c 'from pysr.sr import init_julia; init_julia()'
 
 about:
   home: https://github.com/MilesCranmer/PySR
