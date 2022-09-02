@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # Restore JULIA_DEPOT_PATH to pre-pysr activation
 export JULIA_DEPOT_PATH=$JULIA_DEPOT_PATH_PYSR_BACKUP
 
