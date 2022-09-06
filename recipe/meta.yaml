@@ -1,15 +1,13 @@
-{% set version = "0.10.2" %}
+{% set version = "0.10.3" %}
+{% set sha256 = "ccdca09a04b9c5060dd19d3bb64de007920a316cc4f60e4c39d5a5e920c70daa" %}
 
 package:
   name: pysr
   version: {{ version }}
 
 source:
-  #- url: https://github.com/MilesCranmer/PySR/archive/v{{ version }}.tar.gz
-  #  sha256: 00261e76df9e1006dec180c59fa36d95ee135a15199d321a154c54bd5eb2c2b9
-  - git_url: https://github.com/MilesCranmer/PySR.git
-    git_rev: 52a6b5b04a62ffb1be53f93f0edf0aa506a4321f
-    git_depth: 1
+  - url: https://github.com/MilesCranmer/PySR/archive/v{{ version }}.tar.gz
+    sha256: {{ sha256 }}
 
 build:
   number: 0
@@ -45,7 +43,6 @@ test:
     - julia --project=@pysr-{{ version }} -e "using PyCall"
     - python -c 'from pysr.sr import init_julia; init_julia()'
     - python -c 'import pysr; pysr.install("some_env"); from pysr.sr import init_julia; init_julia("some_env")'
-    - python -c 'from pysr.sr import init_julia; init_julia("bad_env")'
 
 about:
   home: https://github.com/MilesCranmer/PySR
