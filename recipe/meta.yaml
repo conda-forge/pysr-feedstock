@@ -1,12 +1,15 @@
-{% set version = "0.10.1" %}
+{% set version = "0.10.3" %}
 
 package:
   name: pysr
   version: {{ version }}
 
 source:
-  - url: https://github.com/MilesCranmer/PySR/archive/v{{ version }}.tar.gz
-    sha256: 00261e76df9e1006dec180c59fa36d95ee135a15199d321a154c54bd5eb2c2b9
+  #- url: https://github.com/MilesCranmer/PySR/archive/v{{ version }}.tar.gz
+  #  sha256: 00261e76df9e1006dec180c59fa36d95ee135a15199d321a154c54bd5eb2c2b9
+  - git_url: https://github.com/conda-forge/pysr-feedstock.git
+    git_rev: b14e38ac6e7c719c26d1b936f2f960ab5363348f
+    git_depth: 1
 
 build:
   number: 0
