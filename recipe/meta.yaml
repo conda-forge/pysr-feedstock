@@ -44,6 +44,8 @@ test:
     - pip check
     - julia --project=@pysr-{{ version }} -e "using PyCall"
     - python -c 'from pysr.sr import init_julia; init_julia()'
+    - python -c 'import pysr; pysr.install("some_env"); from pysr.sr import init_julia; init_julia("some_env")'
+    - python -c 'from pysr.sr import init_julia; init_julia("bad_env")'
 
 about:
   home: https://github.com/MilesCranmer/PySR
