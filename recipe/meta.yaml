@@ -40,7 +40,7 @@ test:
     - pip
   commands:
     - pip check
-    - julia --project=@pysr-{{ version }} -e "using PyCall"
+    - julia --project=@pysr-{{ version }} -e "using PyCall, SymbolicRegression, ClusterManagers"
     - python -c 'from pysr.sr import init_julia; init_julia()'
     - python -c 'import pysr; pysr.install("some_env"); from pysr.sr import init_julia; init_julia("some_env")'
 
