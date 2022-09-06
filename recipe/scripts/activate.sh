@@ -9,6 +9,7 @@ export PYSR_PROJECT_BACKUP=${PYSR_PROJECT:-}
 # Assumes that the JULIA_DEPOT_PATH ends in a colon
 export JULIA_DEPOT_PATH="${JULIA_DEPOT_PATH}${CONDA_PREFIX}/share/pysr/depot:"
 
-# build.sh will insert lines to set JULIA_PROJECT to @pysr-${VERSION},
+# THE FOLLOWING ACTION HAS BEEN DISABLED IN BUILD.SH
+# build.sh may insert lines to set JULIA_PROJECT to @pysr-${VERSION},
 # to insert that into the project stack via JULIA_LOAD_PROJECT, ans
 # set PYSR_PROJECT
