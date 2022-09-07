@@ -41,6 +41,7 @@ rm -rf "${FAKEDEPOT}"
 # We should not depend on these variables further in the build phase
 unset JULIA_DEPOT_PATH
 unset JULIA_PROJECT
+unset JULIA_PKG_PRECOMPILE_AUTO
 
 # # Copy the [de]activate scripts to $PREFIX/etc/conda/[de]activate.d.
 # # This will allow them to be run on environment activation.
