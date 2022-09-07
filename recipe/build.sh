@@ -12,6 +12,10 @@ FAKEDEPOT="${PREFIX}/share/pysr/fake_depot"
 export JULIA_DEPOT_PATH="${FAKEDEPOT}"
 # Set the JULIA_PROJECT so PyCall.jl gets installed into it
 export JULIA_PROJECT="@pysr-${PKG_VERSION}"
+# Turn off automatic precompilation since we do not package the ji files
+# https://pkgdocs.julialang.org/v1/environments/#Project-Precompilation
+export JULIA_PKG_PRECOMPILE_AUTO="0"
+
 mkdir -p "${FAKEDEPOT}"
 ${PYTHON} -c 'import pysr; pysr.install();'
 
