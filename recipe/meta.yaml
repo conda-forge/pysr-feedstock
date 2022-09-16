@@ -1,4 +1,5 @@
 {% set version = "0.11.0" %}
+{% set sha256 = "e618f8342a3e040cc49508eee6f78542a3a51858f0bc3bc3d12b2b349db5c0bd" %}
 
 package:
   name: pysr
@@ -6,33 +7,26 @@ package:
 
 source:
   - url: https://github.com/MilesCranmer/PySR/archive/v{{ version }}.tar.gz
-    sha256: e618f8342a3e040cc49508eee6f78542a3a51858f0bc3bc3d12b2b349db5c0bd
-
+    sha256: {{ sha256 }}
 
 build:
-  noarch: python
-  number: 0
-  script: {{ PYTHON }} -m pip install . -vv && {{ PYTHON }} -c 'import pysr; pysr.install()'
-
+  number: 1
+  skip: true  # [win]
 requirements:
-  build:
+  host:
     - python
     - pip
     - pyjulia >=0.5.7
-  host:
-    - python >=3.6,<4.0
-    - pip
-    - pyjulia >=0.5.7
-    - julia <=1.7.1
+    - julia
     - numpy >=1.14.0
     - pandas
     - sympy
     - scikit-learn
     - openlibm <0.8.0
   run:
-    - python >=3.6,<4.0
+    - python
     - pyjulia >=0.5.7
-    - julia <=1.7.1
+    - julia
     - numpy >=1.14.0
     - pandas
     - sympy
@@ -46,7 +40,10 @@ test:
     - pip
   commands:
     - pip check
+    - julia --project=@pysr-{{ version }} -e "using PyCall, SymbolicRegression, ClusterManagers"
+    - python -c 'from pysr.sr import init_julia; init_julia()'
     - python -c 'import pysr; pysr.install(); from pysr.sr import init_julia; init_julia()'
+    - python -c 'import tempfile; tempenv = tempfile.mkdtemp(); import pysr; pysr.install(tempenv); from pysr.sr import init_julia; init_julia(tempenv)'
 
 about:
   home: https://github.com/MilesCranmer/PySR
