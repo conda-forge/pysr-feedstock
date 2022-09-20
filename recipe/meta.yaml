@@ -22,7 +22,8 @@ requirements:
     - pandas
     - sympy
     - scikit-learn
-    - openlibm <0.8.0
+    - openlibm
+    - openspecfun
   run:
     - python
     - pyjulia >=0.5.7
@@ -32,6 +33,7 @@ requirements:
     - sympy
     - scikit-learn
     - openlibm
+    - openspecfun
 
 test:
   imports:
