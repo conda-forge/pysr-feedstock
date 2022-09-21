@@ -22,7 +22,7 @@ requirements:
     - pandas
     - sympy
     - scikit-learn
-    - openlibm <0.8.0
+    - openlibm
   run:
     - python
     - pyjulia >=0.5.7
