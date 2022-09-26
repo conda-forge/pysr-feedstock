@@ -19,6 +19,11 @@ export JULIA_PKG_PRECOMPILE_AUTO="0"
 mkdir -p "${FAKEDEPOT}"
 ${PYTHON} -c 'import pysr; pysr.install();'
 
+# Override OpenSpecFun_jll artifact with conda-forge binaries
+openspecfun_artifact_hash=`julia -e "using SymbolicRegression; print(basename(SymbolicRegression.CoreModule.OperatorsModule.SpecialFunctions.OpenSpecFun_jll.artifact_dir))"`
+echo "$openspecfun_artifact_hash = \"$PREFIX\"" >> "${FAKEDEPOT}/artifacts/Overrides.toml"
+rm -rf "${FAKEDEPOT}/artifacts/${openspecfun_artifact_hash}"
+
 # Copy packages, artifacts, environments, and conda dirs
 # into the real depot that we will package
 SRDEPOT="${PREFIX}/share/pysr/depot"
