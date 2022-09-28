@@ -1,12 +1,12 @@
-{% set version = "0.11.1" %}
-{% set sha256 = "ad1995c3527592527dc0afa5a4d32d92e014f7bad4a01e3e9284fcd34f86e562" %}
+{% set version = "0.11.2" %}
+{% set sha256 = "b9de694d9058a5acfbb663d49c8b8dfb7f21b3e6ac9a3105ad68cddddbc36ced" %}
 
 package:
   name: pysr
   version: {{ version }}
 
 source:
-  - url: https://github.com/MilesCranmer/PySR/archive/v{{ version }}-1.tar.gz
+  - url: https://github.com/MilesCranmer/PySR/archive/v{{ version }}.tar.gz
     sha256: {{ sha256 }}
 
 build:
