@@ -1,28 +1,8 @@
 python:
-  - 3.6
-  - 3.7
-  - 3.8
-  - 3.9
-  - 3.10
-  - 3.11
-pin_run_as_build:
-  python:
-    min_pin: x.x
-    max_pin: x.x
-channel_sources:
-  - conda-forge
-channel_targets:
-  - conda-forge main
+  - 3.8.* *_cpython
+  - 3.9.* *_cpython
+  - 3.10.* *_cpython
+
 target_platform:
   - osx-64  # [osx]
   - linux-64  # [linux]
-
-cdt_name:  # [linux]
-  - cos6  # [linux]
-docker_image:  # [linux]
-  - quay.io/condaforge/linux-anvil-cos7-x86_64  # [linux]
-
-MACOSX_DEPLOYMENT_TARGET:  # [osx]
-  - '10.9'  # [osx]
-macos_machine:  # [osx]
-  - x86_64-apple-darwin13.4.0  # [osx]
