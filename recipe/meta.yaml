@@ -16,7 +16,7 @@ requirements:
   host:
     - python
     - pip
-    - pyjulia >=0.5.7
+    - pyjulia =0.6.0
     - julia
     - numpy >=1.14.0
     - pandas
@@ -26,7 +26,7 @@ requirements:
     - openspecfun
   run:
     - python
-    - pyjulia >=0.5.7
+    - pyjulia =0.6.0
     - julia
     - numpy >=1.14.0
     - pandas
