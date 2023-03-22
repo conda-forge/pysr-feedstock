@@ -20,7 +20,8 @@ mkdir -p "${FAKEDEPOT}"
 ${PYTHON} -c 'import pysr; pysr.install();'
 
 # Override OpenSpecFun_jll artifact with conda-forge binaries
-openspecfun_artifact_hash=`julia -e "using SymbolicRegression; print(basename(SymbolicRegression.CoreModule.OperatorsModule.SpecialFunctions.OpenSpecFun_jll.artifact_dir))"`
+julia -e 'ENV["JULIA_PKG_PRECOMPILE_AUTO"] = 0; using SymbolicRegression; open(".artifact_hash.txt", "w") do io; write(io, basename(SymbolicRegression.CoreModule.OperatorsModule.SpecialFunctions.OpenSpecFun_jll.artifact_dir)); end'
+openspecfun_artifact_hash=`cat .artifact_hash.txt`
 echo "$openspecfun_artifact_hash = \"$PREFIX\"" >> "${FAKEDEPOT}/artifacts/Overrides.toml"
 rm -rf "${FAKEDEPOT}/artifacts/${openspecfun_artifact_hash}"
 
