@@ -1,5 +1,5 @@
-{% set version = "0.13.0" %}
-{% set sha256 = "5aad832b2543e1a899dd396e575d3eb67b2871dedcd83d3afbdfcc1011e735d2" %}
+{% set version = "0.14.0" %}
+{% set sha256 = "f06046458c931d981def473839fe427188a3ae97e86f47cfeac1d61250982045" %}
 
 package:
   name: pysr
@@ -16,22 +16,24 @@ requirements:
   host:
     - python
     - pip
-    - pyjulia =0.6.0
+    - pyjulia >=0.6.0
     - julia
     - numpy >=1.14.0
     - pandas
     - sympy
-    - scikit-learn
+    - scikit-learn >=1.0.0
+    - click >=7.0.0
     - openlibm
     - openspecfun
   run:
     - python
-    - pyjulia =0.6.0
+    - pyjulia >=0.6.0
     - julia
     - numpy >=1.14.0
     - pandas
     - sympy
-    - scikit-learn
+    - scikit-learn >=1.0.0
+    - click >=7.0.0
     - openlibm
     - openspecfun
 
