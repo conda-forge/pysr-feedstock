@@ -16,22 +16,24 @@ requirements:
   host:
     - python
     - pip
-    - pyjulia =0.6.0
+    - pyjulia >=0.6.0
     - julia
     - numpy >=1.14.0
     - pandas
     - sympy
-    - scikit-learn
+    - scikit-learn >=1.0.0
+    - click >=7.0.0
     - openlibm
     - openspecfun
   run:
     - python
-    - pyjulia =0.6.0
+    - pyjulia >=0.6.0
     - julia
     - numpy >=1.14.0
     - pandas
     - sympy
-    - scikit-learn
+    - scikit-learn >=1.0.0
+    - click >=7.0.0
     - openlibm
     - openspecfun
 
