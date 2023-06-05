@@ -29,7 +29,7 @@ requirements:
     - python
     - pyjulia >=0.6.0
     - julia
-    - numpy >=1.14.0
+    - {{ pin_compatible('numpy', min_pin='1.14') }}
     - pandas
     - sympy
     - scikit-learn >=1.0.0
