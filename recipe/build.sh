@@ -2,7 +2,7 @@
 
 set -euxo pipefail
 
-${PYTHON} -m pip install . -vv
+${PYTHON} -m pip install --no-deps --ignore-installed -vv .
 
 # Build an accessory Julia depot containing all of
 # SymbolicRegression.jl's dependencies
