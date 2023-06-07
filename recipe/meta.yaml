@@ -19,6 +19,9 @@ requirements:
     - pyjulia >=0.6.0
     - julia
     - numpy
+    # Temporary fix for PyCall.jl mistakenly re-installing numpy.
+    # TODO: Remove this.
+    - numpy >=1.24.3
     - pandas
     - sympy
     - scikit-learn >=1.0.0
