@@ -17,7 +17,7 @@ export JULIA_PROJECT="@pysr-${PKG_VERSION}"
 export JULIA_PKG_PRECOMPILE_AUTO="0"
 
 mkdir -p "${FAKEDEPOT}"
-${PYTHON} -c 'import pysr; pysr.install();'
+${PYTHON} -m pysr install
 
 # Override OpenSpecFun_jll artifact with conda-forge binaries
 julia -e 'ENV["JULIA_PKG_PRECOMPILE_AUTO"] = 0; using SymbolicRegression; open(".artifact_hash.txt", "w") do io; write(io, basename(SymbolicRegression.CoreModule.OperatorsModule.SpecialFunctions.OpenSpecFun_jll.artifact_dir)); end'
