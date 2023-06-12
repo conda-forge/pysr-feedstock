@@ -28,7 +28,6 @@ requirements:
     - click >=7.0.0
     - openlibm
     - openspecfun
-    - libstdcxx-ng <13
   run:
     - python
     - pyjulia >=0.6.0
@@ -40,6 +39,7 @@ requirements:
     - click >=7.0.0
     - openlibm
     - openspecfun
+  run_constrained:
     - libstdcxx-ng <13
 
 test:
