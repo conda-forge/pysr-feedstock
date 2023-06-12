@@ -10,7 +10,7 @@ source:
     sha256: {{ sha256 }}
 
 build:
-  number: 2
+  number: 3
   skip: true  # [win]
 requirements:
   host:
@@ -18,10 +18,11 @@ requirements:
     - pip
     - pyjulia >=0.6.0
     - julia
+    - numpy
     # temporarily rebuilding with newest numpy because PyCall.jl ends up
     # reinstalling it and we want to avoid spamming ClobberWarnings
     # TODO: remove this as soon as numpy does not get spuriously installed here anymore
-    - numpy >=1.24.3
+    - numpy >=1.14.0
     - pandas
     - sympy
     - scikit-learn >=1.0.0
@@ -50,9 +51,7 @@ test:
   commands:
     - pip check
     - julia --project=@pysr-{{ version }} -e "using PyCall, SymbolicRegression, ClusterManagers"
-    - python -c 'from pysr.sr import init_julia; init_julia()'
-    - python -c 'import pysr; pysr.install(); from pysr.sr import init_julia; init_julia()'
-    - python -c 'import tempfile; tempenv = tempfile.mkdtemp(); import pysr; pysr.install(tempenv); from pysr.sr import init_julia; init_julia(tempenv)'
+    - python -m pysr.test main
 
 about:
   home: https://github.com/MilesCranmer/PySR
