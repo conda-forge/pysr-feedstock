@@ -22,7 +22,7 @@ requirements:
     # temporarily rebuilding with newest numpy because PyCall.jl ends up
     # reinstalling it and we want to avoid spamming ClobberWarnings
     # TODO: remove this as soon as numpy does not get spuriously installed here anymore
-    - numpy >=1.24.3
+    - numpy >=1.14.0
     - pandas
     - sympy
     - scikit-learn >=1.0.0
