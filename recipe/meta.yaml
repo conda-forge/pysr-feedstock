@@ -10,7 +10,7 @@ source:
     sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 requirements:
   host:
@@ -19,10 +19,6 @@ requirements:
     - pyjulia >=0.6.0
     - julia
     - numpy
-    # temporarily rebuilding with newest numpy because PyCall.jl ends up
-    # reinstalling it and we want to avoid spamming ClobberWarnings
-    # TODO: remove this as soon as numpy does not get spuriously installed here anymore
-    - numpy >=1.14.0
     - pandas
     - sympy
     - scikit-learn >=1.0.0
@@ -41,8 +37,6 @@ requirements:
     - click >=7.0.0
     - openlibm
     - openspecfun
-  run_constrained:
-    - libstdcxx-ng <13
 
 test:
   imports:
