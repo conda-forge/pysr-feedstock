@@ -17,7 +17,7 @@ requirements:
     - python
     - pip
     - pyjulia >=0.6.0
-    - julia
+    - julia <=1.9.3
     - numpy
     - pandas
     - sympy
@@ -28,7 +28,7 @@ requirements:
   run:
     - python
     - pyjulia >=0.6.0
-    - julia
+    - julia <=1.9.3
     - {{ pin_compatible('numpy') }}
     - pandas
     - sympy
