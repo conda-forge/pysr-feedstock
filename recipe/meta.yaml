@@ -17,25 +17,25 @@ requirements:
     - python
     - pip
     - pyjulia >=0.6.0
-    - julia <=1.9.3
+    - julia
     - numpy
     - pandas
     - sympy
     - scikit-learn >=1.0.0
     - click >=7.0.0
     - openlibm
-    - openspecfun
+    - openspecfun >=0.5.5,<0.5.6
   run:
     - python
     - pyjulia >=0.6.0
-    - julia <=1.9.3
+    - julia
     - {{ pin_compatible('numpy') }}
     - pandas
     - sympy
     - scikit-learn >=1.0.0
     - click >=7.0.0
     - openlibm
-    - openspecfun
+    - openspecfun >=0.5.5,<0.5.6
 
 test:
   imports:
