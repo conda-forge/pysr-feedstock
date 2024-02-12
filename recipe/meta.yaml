@@ -15,25 +15,24 @@ requirements:
   host:
     - python
     - pip
-    - sympy>=1.0.0,<2.0.0
-    - pandas>=0.21.0,<3.0.0
-    - numpy>=1.13.0,<2.0.0
-    - scikit_learn>=1.0.0,<2.0.0
+    - sympy >=1.0.0,<2.0.0
+    - pandas >=0.21.0,<3.0.0
+    - numpy >=1.13.0,<2.0.0
+    - scikit_learn >=1.0.0,<2.0.0
     - pyjuliacall >=0.9.15,<0.9.16
-    - click>=7.0.0,<9.0.0
-    - setuptools>=50.0.0
-    - typing_extensions>=4.0.0,<5.0.0
+    - click >=7.0.0,<9.0.0
+    - typing_extensions >=4.0.0,<5.0.0
   run:
     - python
     - pyjulia >=0.6.0
     - {{ pin_compatible('numpy') }}
-    - sympy>=1.0.0,<2.0.0
-    - pandas>=0.21.0,<3.0.0
-    - scikit_learn>=1.0.0,<2.0.0
+    - sympy >=1.0.0,<2.0.0
+    - pandas >=0.21.0,<3.0.0
+    - scikit_learn >=1.0.0,<2.0.0
     - pyjuliacall >=0.9.15,<0.9.16
-    - click>=7.0.0,<9.0.0
-    - setuptools>=50.0.0
-    - typing_extensions>=4.0.0,<5.0.0
+    - click >=7.0.0,<9.0.0
+    - setuptools >=50.0.0
+    - typing_extensions >=4.0.0,<5.0.0
 
 test:
   imports:
