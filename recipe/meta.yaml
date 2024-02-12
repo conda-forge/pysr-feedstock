@@ -1,5 +1,5 @@
-{% set version = "0.16.8" %}
-{% set sha256 = "0645a42c43bbadd2cd0f8f49c4a055adca7f19670985796c650196bc90ed5e43" %}
+{% set version = "0.17.0" %}
+{% set sha256 = "ec4069c24c534af992d4283ef4688e762a365efe2725b6e53c887ffa0c7113f3" %}
 
 package:
   name: pysr
@@ -11,31 +11,29 @@ source:
 
 build:
   number: 0
-  skip: true  # [win]
+  noarch: python
+  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed
 requirements:
   host:
-    - python
+    - python >=3.7,<4.0
     - pip
-    - pyjulia >=0.6.0
-    - julia
-    - numpy
-    - pandas
-    - sympy
-    - scikit-learn >=1.0.0
-    - click >=7.0.0
-    - openlibm
-    - openspecfun >=0.5.5,<0.5.6
+    - sympy >=1.0.0,<2.0.0
+    - pandas >=0.21.0,<3.0.0
+    - numpy >=1.13.0,<2.0.0
+    - scikit-learn >=1.0.0,<2.0.0
+    - pyjuliacall >=0.9.15,<0.9.16
+    - click >=7.0.0,<9.0.0
+    - typing_extensions >=4.0.0,<5.0.0
   run:
-    - python
-    - pyjulia >=0.6.0
-    - julia
+    - python >=3.7,<4.0
     - {{ pin_compatible('numpy') }}
-    - pandas
-    - sympy
-    - scikit-learn >=1.0.0
-    - click >=7.0.0
-    - openlibm
-    - openspecfun >=0.5.5,<0.5.6
+    - sympy >=1.0.0,<2.0.0
+    - pandas >=0.21.0,<3.0.0
+    - scikit-learn >=1.0.0,<2.0.0
+    - pyjuliacall >=0.9.15,<0.9.16
+    - click >=7.0.0,<9.0.0
+    - setuptools >=50.0.0
+    - typing_extensions >=4.0.0,<5.0.0
 
 test:
   imports:
@@ -44,8 +42,7 @@ test:
     - pip
   commands:
     - pip check
-    - julia --project=@pysr-{{ version }} -e "using PyCall, SymbolicRegression, ClusterManagers"
-    - python -m pysr.test main
+    - python -m pysr test main
 
 about:
   home: https://github.com/MilesCranmer/PySR
