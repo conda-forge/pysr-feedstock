@@ -1,5 +1,5 @@
-{% set version = "0.17.1" %}
-{% set sha256 = "26e0120c528ce45dd00641f48189fada49ab4765ee0a05c4f5ff8079c1edc1fd" %}
+{% set version = "0.17.2" %}
+{% set sha256 = "998be11a6af6f27e277f6c3d8dcc129669e3a9d6dda3c2323ca346f7696284aa" %}
 
 package:
   name: pysr
