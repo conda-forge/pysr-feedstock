@@ -1,5 +1,5 @@
-{% set version = "0.19.0" %}
-{% set sha256 = "44ec288d6402c73cddfd9930b1c4e11ce91de729a92329d5e7b20de7d90e6690" %}
+{% set version = "0.19.2" %}
+{% set sha256 = "2a34660fb2bf439c6cae5eab3df43442bca694cad9fcaf91e5874480ad0461ec" %}
 
 package:
   name: pysr
@@ -10,7 +10,7 @@ source:
     sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed
 requirements:
