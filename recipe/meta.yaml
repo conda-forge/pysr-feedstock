@@ -15,25 +15,23 @@ build:
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed
 requirements:
   host:
-    - python >=3.7,<4.0
+    - python >=3.8,<4.0
     - pip
     - sympy >=1.0.0,<2.0.0
     - pandas >=0.21.0,<3.0.0
     - numpy >=1.13.0,<3.0.0
     - scikit-learn >=1.0.0,<2.0.0
-    - pyjuliacall >=0.9.20,<0.9.21
+    - pyjuliacall >=0.9.21,<0.9.22
     - click >=7.0.0,<9.0.0
-    - typing_extensions >=4.0.0,<5.0.0
   run:
-    - python >=3.7,<4.0
+    - python >=3.8,<4.0
     - {{ pin_compatible('numpy') }}
     - sympy >=1.0.0,<2.0.0
     - pandas >=0.21.0,<3.0.0
     - scikit-learn >=1.0.0,<2.0.0
-    - pyjuliacall >=0.9.20,<0.9.21
+    - pyjuliacall >=0.9.21,<0.9.22
     - click >=7.0.0,<9.0.0
     - setuptools >=50.0.0
-    - typing_extensions >=4.0.0,<5.0.0
 
 test:
   imports:
