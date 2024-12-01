@@ -10,12 +10,12 @@ source:
     sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed
 requirements:
   host:
-    - python >=3.8,<4.0
+    - python >=3.10,<4.0
     - pip
     - sympy >=1.0.0,<2.0.0
     - pandas >=0.21.0,<3.0.0
@@ -24,7 +24,7 @@ requirements:
     - pyjuliacall >=0.9.23,<0.9.24
     - click >=7.0.0,<9.0.0
   run:
-    - python >=3.8,<4.0
+    - python >=3.10,<4.0
     - {{ pin_compatible('numpy') }}
     - sympy >=1.0.0,<2.0.0
     - pandas >=0.21.0,<3.0.0
@@ -50,7 +50,7 @@ about:
   summary: Simple, fast, and parallelized symbolic regression in Python
   description: |
     PySR is a simple, fast, and parallelized symbolic regression package for Python and Julia, which makes use of an algorithm based on regularized evolution and simulated annealing.
-  doc_url: https://astroautomata.com/PySR
+  doc_url: https://ai.damtp.cam.ac.uk/pysr
   dev_url: https://github.com/MilesCranmer/PySR
 
 extra:
