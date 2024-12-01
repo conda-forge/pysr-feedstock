@@ -1,5 +1,6 @@
 {% set version = "1.0.0" %}
 {% set sha256 = "4e34db1f4d61d7c3cd9f98ebeebf7deb22e46532d4ec8c49be025a5faa65b6f3" %}
+{% set python_min = "3.10" %}
 
 package:
   name: pysr
@@ -15,8 +16,9 @@ build:
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed
 requirements:
   host:
-    - python >=3.10,<4.0
+    - python {{ python_min }}
     - pip
+    - setuptools >=50.0.0
     - sympy >=1.0.0,<2.0.0
     - pandas >=0.21.0,<3.0.0
     - numpy >=1.13.0,<3.0.0
@@ -24,7 +26,7 @@ requirements:
     - pyjuliacall >=0.9.23,<0.9.24
     - click >=7.0.0,<9.0.0
   run:
-    - python >=3.10,<4.0
+    - python >={{ python_min }}
     - {{ pin_compatible('numpy') }}
     - sympy >=1.0.0,<2.0.0
     - pandas >=0.21.0,<3.0.0
@@ -38,6 +40,7 @@ test:
     - pysr
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
     - python -m pysr test main
