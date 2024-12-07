@@ -11,7 +11,7 @@ Summary: Simple, fast, and parallelized symbolic regression in Python
 
 Development: https://github.com/MilesCranmer/PySR
 
-Documentation: https://astroautomata.com/PySR
+Documentation: https://ai.damtp.cam.ac.uk/pysr
 
 PySR is a simple, fast, and parallelized symbolic regression package for Python and Julia, which makes use of an algorithm based on regularized evolution and simulated annealing.
 
