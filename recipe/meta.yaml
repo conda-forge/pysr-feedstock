@@ -1,5 +1,5 @@
-{% set version = "1.5.0" %}
-{% set sha256 = "90fc9277fa6f08050704058c19ed2bfc882cd1d035cc93e6e281233ce1f1a9e5" %}
+{% set version = "1.5.1" %}
+{% set sha256 = "14dc968c9f6d7019f35a78162cd77671e106e8b0efabb6e33402737c172662ab" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -11,7 +11,7 @@ source:
     sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed
 requirements:
