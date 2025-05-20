@@ -1,5 +1,5 @@
-{% set version = "1.5.6" %}
-{% set sha256 = "eeee5574c3bd732d2ce9728648ccf4211844d9682d95c4392517c08397a2f101" %}
+{% set version = "1.5.8" %}
+{% set sha256 = "e0c56cfc1655702da13d15499a411df2516953f59b58e00fddb6159d50a9fce8" %}
 {% set python_min = "3.8" %}
 
 package:
@@ -18,24 +18,16 @@ requirements:
   host:
     - python {{ python_min }}.*
     - pip
-    - setuptools >=50.0.0
-    - sympy >=1.0.0,<2.0.0
-    - pandas >=0.21.0,<3.0.0
-    - numpy >=1.13.0,<3.0.0
-    - scikit-learn >=1.0.0,<2.0.0
-    - pyjuliacall >=0.9.24,<0.9.25
-    - click >=7.0.0,<9.0.0
-    - typing-extensions >=4.0.0,<5.0.0
+    - hatchling
   run:
     - python >={{ python_min }}
-    - {{ pin_compatible('numpy') }}
+    - numpy >=1.13.0,<3.0.0
     - sympy >=1.0.0,<2.0.0
     - pandas >=0.21.0,<3.0.0
     - scikit-learn >=1.0.0,<2.0.0
-    - pyjuliacall >=0.9.24,<0.9.25
+    - pyjuliacall >=0.9.24,<0.9.26
     - click >=7.0.0,<9.0.0
     - typing-extensions >=4.0.0,<5.0.0
-    - setuptools >=50.0.0
 
 test:
   imports:
