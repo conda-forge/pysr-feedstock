@@ -11,7 +11,7 @@ source:
     sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed
 requirements:
@@ -25,7 +25,7 @@ requirements:
     - sympy >=1.0.0,<2.0.0
     - pandas >=0.21.0,<3.0.0
     - scikit-learn >=1.0.0,<2.0.0
-    - pyjuliacall >=0.9.24,<0.9.26
+    - pyjuliacall >=0.9.24,<0.9.27
     - click >=7.0.0,<9.0.0
     - typing-extensions >=4.0.0,<5.0.0
 
