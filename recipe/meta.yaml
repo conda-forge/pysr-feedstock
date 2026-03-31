@@ -1,6 +1,6 @@
 {% set version = "1.5.10" %}
 {% set sha256 = "72b67cf236cb14c243d5352ef9058137c16197ac1fb91f936778b46e0922b4e2" %}
-{% set python_min = "3.8" %}
+{% set python_min = "3.9" %}
 
 package:
   name: pysr
