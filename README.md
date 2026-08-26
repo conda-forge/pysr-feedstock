@@ -3,13 +3,13 @@ About pysr-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pysr-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/MilesCranmer/PySR
+Home: https://github.com/astroautomata/PySR
 
 Package license: Apache-2.0
 
 Summary: Simple, fast, and parallelized symbolic regression in Python
 
-Development: https://github.com/MilesCranmer/PySR
+Development: https://github.com/astroautomata/PySR
 
 Documentation: https://ai.damtp.cam.ac.uk/pysr
 
@@ -23,7 +23,9 @@ Current build status
 <table><tr>
     <td>All platforms:</td>
     <td>
-      <img src="https://img.shields.io/badge/noarch-disabled-lightgrey.svg" alt="noarch disabled">
+      <a href="https://github.com/conda-forge/pysr-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/pysr-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
+      </a>
     </td>
   </tr>
 </table>
@@ -45,31 +47,73 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `pysr` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install pysr
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install pysr
 ```
 
-It is possible to list all of the versions of `pysr` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add pysr
+# for installing globally
+pixi global install pysr
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `pysr` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search pysr --channel conda-forge
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search pysr --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search pysr --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -81,6 +125,8 @@ mamba repoquery whoneeds pysr --channel conda-forge
 # List dependencies of `pysr`:
 mamba repoquery depends pysr --channel conda-forge
 ```
+
+</details>
 
 
 About conda-forge
@@ -150,4 +196,6 @@ Feedstock Maintainers
 =====================
 
 * [@MilesCranmer](https://github.com/MilesCranmer/)
+* [@adil-soubki](https://github.com/adil-soubki/)
+* [@elizabethsztan](https://github.com/elizabethsztan/)
 
