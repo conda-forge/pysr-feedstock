@@ -1,6 +1,6 @@
-{% set version = "2.1.0" %}
-{% set sha256 = "615aec9e999788897ec3b009030267fd913dcfb795eeda4d6b15bc22c2fed360" %}
-{% set python_min = "3.9" %}
+{% set version = "2.3.1" %}
+{% set sha256 = "f88d5c125362f657efe1f1a911d81a66f45b841c4a94d8fa9d482edc6ab5b5dc" %}
+{% set python_min = "3.10" %}
 
 package:
   name: pysr
@@ -25,7 +25,7 @@ requirements:
     - sympy >=1.14.0,<2.0.0
     - pandas >=0.21.0,<4.0.0
     - scikit-learn >=1.0.0,<2.0.0
-    - pyjuliacall >=0.9.28,<0.9.36
+    - pyjuliacall >=0.9.29,<0.9.36
     - click >=7.0.0,<9.0.0
     - typing-extensions >=4.0.0,<5.0.0
 
