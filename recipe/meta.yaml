@@ -1,5 +1,5 @@
-{% set version = "2.7.1" %}
-{% set sha256 = "71ab13ac2e02317582a0f04fcd3dcfff3578fad21445bbe4279f4aa6dae012f7" %}
+{% set version = "2.7.2" %}
+{% set sha256 = "5bf860b8fcad8613a595832d3c8d83f060fdf6e7dad2da74e164e7b8aaccf669" %}
 {% set python_min = "3.10" %}
 
 package:
